@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>easy-deploy</name>
+    <version>1.0</version>
+    <vendor email="jiaxuelei@fenbi.com" url="">conan</vendor>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <group id="easy-deploy-group" text="easy-deploy" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <action id="auto-deploy-test" class="EasyBuildTest" text="test-deploy" description="快速部署">
+                <add-to-group group-id="easy-deploy-group" anchor="first"/>
+            </action>
+            <action id="auto-deploy-online" class="EasyBuildOnline" text="online-deploy" description="快速部署">
+                <add-to-group group-id="easy-deploy-group" anchor="first"/>
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>
